@@ -62,11 +62,11 @@ class UserProfileNotifier extends StateNotifier<UserProfile?> {
     state = null;
     return true;
   }
-
-  //Provider for the UserProfileNotifier
-  final userProfileProvider =
-      StateNotifierProvider<UserProfileNotifier, UserProfile?>((ref) {
-        final storageService = ref.watch(storageServiceProvider);
-        return UserProfileNotifier(storageService);
-      });
 }
+
+//Provider for the UserProfileNotifier
+final userProfileProvider =
+    StateNotifierProvider<UserProfileNotifier, UserProfile?>((ref) {
+      final storageService = ref.watch(storageServiceProvider);
+      return UserProfileNotifier(storageService);
+    });
