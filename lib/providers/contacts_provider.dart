@@ -131,13 +131,13 @@ class EmergencyContactsNotifier extends StateNotifier<List<EmergencyContact>> {
       orElse: () => state.first,
     );
   }
-
-  // Provider for the EmergencyContactsNotifier
-  final emergencyContactsProvider =
-      StateNotifierProvider<EmergencyContactsNotifier, List<EmergencyContact>>((
-        ref,
-      ) {
-        final storageService = ref.watch(storageServiceProvider);
-        return EmergencyContactsNotifier(storageService);
-      });
 }
+
+// Provider for the EmergencyContactsNotifier
+final emergencyContactsProvider =
+    StateNotifierProvider<EmergencyContactsNotifier, List<EmergencyContact>>((
+      ref,
+    ) {
+      final storageService = ref.watch(storageServiceProvider);
+      return EmergencyContactsNotifier(storageService);
+    });
