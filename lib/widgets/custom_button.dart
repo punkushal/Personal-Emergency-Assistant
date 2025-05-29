@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_emergency_assistant/constants/app_themes.dart';
+import 'package:personal_emergency_assistant/widgets/loading_indicator.dart';
 
 enum ButtonVariant { filled, outlined, text }
 
@@ -70,14 +71,7 @@ class CustomButton extends StatelessWidget {
         return Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(
-              width: 16,
-              height: 16,
-              child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(getTxtColor()),
-                strokeWidth: 2,
-              ),
-            ),
+            LoadingIndicator(color: getTxtColor(), size: 16),
             const SizedBox(width: 8),
             Text('Loading...'),
           ],
