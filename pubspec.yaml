@@ -52,7 +52,7 @@ dependencies:
   geocoding: ^3.0.0
 
   #SMS sending
-  flutter_sms: ^2.3.3
+  sms_advanced: ^1.1.0
 
   #Permissions
   permission_handler: ^12.0.0+1
