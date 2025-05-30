@@ -1,4 +1,4 @@
-import 'package:flutter_sms/flutter_sms.dart';
+import 'package:sms_advanced/sms_advanced.dart';
 import 'package:personal_emergency_assistant/models/emergency_contact.dart';
 import 'package:personal_emergency_assistant/models/user_profile.dart';
 import 'package:permission_handler/permission_handler.dart' as permission;
@@ -58,13 +58,32 @@ class SmsService {
       }
 
       //Send the message
-      await sendSMS(
-        message: message,
-        recipients: phoneNumbers,
-        sendDirect: true,
-      );
+      final List<String> failedNumbers = [];
+      final List<String> successNumbers = [];
 
-      return SmsResult(success: true, sentTo: phoneNumbers);
+      for (String phoneNumber in phoneNumbers) {
+        try {
+          final SmsMessage smsMessage = SmsMessage(phoneNumber, message);
+          await SmsSender().sendSms(smsMessage);
+          successNumbers.add(phoneNumber);
+        } catch (e) {
+          failedNumbers.add(phoneNumber);
+        }
+      }
+
+      if (successNumbers.isEmpty) {
+        return SmsResult(
+          success: false,
+          errorMessage: 'Failed to send SMS to all contacts',
+          failedTo: failedNumbers,
+        );
+      }
+
+      return SmsResult(
+        success: true,
+        sentTo: successNumbers,
+        failedTo: failedNumbers.isEmpty ? null : failedNumbers,
+      );
     } catch (e) {
       return SmsResult(success: false, errorMessage: 'Error sending SMS: $e');
     }
@@ -80,6 +99,12 @@ class SmsResult {
   final bool success;
   final String? errorMessage;
   final List<String>? sentTo;
+  final List<String>? failedTo;
 
-  SmsResult({required this.success, this.errorMessage, this.sentTo});
+  SmsResult({
+    required this.success,
+    this.errorMessage,
+    this.sentTo,
+    this.failedTo,
+  });
 }
