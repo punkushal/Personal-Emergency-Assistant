@@ -8,14 +8,39 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageService {
   late SharedPreferences _prefs;
+  static StorageService? _instance;
+  bool _isInitialized = false;
+
+  //Privated constructor
+  StorageService._();
+
+  //Singleton instance getter
+  static StorageService get instance {
+    _instance ??= StorageService._();
+    return _instance!;
+  }
 
   //Initialize the shared preferences instance
   Future<void> init() async {
-    _prefs = await SharedPreferences.getInstance();
+    if (!_isInitialized) {
+      _prefs = await SharedPreferences.getInstance();
+      _isInitialized = true;
+    }
+  }
+
+  //Getter to check if initialized
+  bool get isInitialized => _isInitialized;
+
+  //Ensure initialization before any operation
+  Future<void> _ensureInitialized() async {
+    if (!_isInitialized) {
+      await init();
+    }
   }
 
   //User profile methods
   Future<bool> saveUserProfile(UserProfile profile) async {
+    await _ensureInitialized();
     final profileJson = jsonEncode(profile.toJson());
     return await _prefs.setString(
       AppConstants.prefsUserProfileKey,
@@ -23,7 +48,8 @@ class StorageService {
     );
   }
 
-  UserProfile? getUserProfile() {
+  Future<UserProfile?> getUserProfile() async {
+    await _ensureInitialized();
     final profileJson = _prefs.getString(AppConstants.prefsUserProfileKey);
     if (profileJson == null) return null;
     try {
@@ -36,6 +62,7 @@ class StorageService {
 
   //Emergency Contacts Methods
   Future<bool> saveEmergencyContacts(List<EmergencyContact> contacts) async {
+    await _ensureInitialized();
     final contactJson = jsonEncode(
       contacts.map((contact) => contact.toJson()).toList(),
     );
@@ -45,7 +72,8 @@ class StorageService {
     );
   }
 
-  List<EmergencyContact> getEmergencyContacts() {
+  Future<List<EmergencyContact>> getEmergencyContacts() async {
+    await _ensureInitialized();
     final contactsJson = _prefs.getString(
       AppConstants.prefsEmergencyContactsKey,
     );
@@ -64,6 +92,7 @@ class StorageService {
 
   // Onboarding Status
   Future<bool> setHasCompletedOnboarding(bool completed) async {
+    await _ensureInitialized();
     return await _prefs.setBool(
       AppConstants.prefsHasCompletedOnboardingKey,
       completed,
@@ -76,16 +105,19 @@ class StorageService {
 
   // SOS Message Template
   Future<bool> setSmsTemplate(String template) async {
+    await _ensureInitialized();
     return await _prefs.setString(AppConstants.prefsSmsTemplateKey, template);
   }
 
-  String getSmsTemplate() {
+  Future<String> getSmsTemplate() async {
+    await _ensureInitialized();
     return _prefs.getString(AppConstants.prefsSmsTemplateKey) ??
         AppConstants.defaultSosTemplate;
   }
 
   // Reset all data (for testing or user reset)
   Future<bool> resetAllData() async {
+    await _ensureInitialized();
     return await _prefs.clear();
   }
 }
