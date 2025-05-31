@@ -1,9 +1,13 @@
-import 'package:sms_advanced/sms_advanced.dart';
+import 'dart:developer';
+
+import 'package:another_telephony/telephony.dart';
 import 'package:personal_emergency_assistant/models/emergency_contact.dart';
 import 'package:personal_emergency_assistant/models/user_profile.dart';
 import 'package:permission_handler/permission_handler.dart' as permission;
 
 class SmsService {
+  final Telephony telephony = Telephony.instance;
+
   //Send sos message to emergency contacts
   Future<SmsResult> sendSosMsg({
     required List<EmergencyContact> contacts,
@@ -63,8 +67,18 @@ class SmsService {
 
       for (String phoneNumber in phoneNumbers) {
         try {
-          final SmsMessage smsMessage = SmsMessage(phoneNumber, message);
-          await SmsSender().sendSms(smsMessage);
+          await telephony.sendSms(
+            to: phoneNumber,
+            message: message,
+            statusListener: (status) {
+              //Handle delivery status if needed
+              if (status == SendStatus.SENT) {
+                log('SMS sent successfully to $phoneNumber');
+              } else if (status == SendStatus.DELIVERED) {
+                log('SMS delivered to $phoneNumber');
+              }
+            },
+          );
           successNumbers.add(phoneNumber);
         } catch (e) {
           failedNumbers.add(phoneNumber);
