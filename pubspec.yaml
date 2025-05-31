@@ -49,10 +49,10 @@ dependencies:
 
   #Location services
   geolocator: ^14.0.0
-  geocoding: ^3.0.0
+  geocoding: ^4.0.0
 
   #SMS sending
-  sms_advanced: ^1.1.0
+  another_telephony: ^0.4.1
 
   #Permissions
   permission_handler: ^12.0.0+1
@@ -98,6 +98,7 @@ flutter:
   assets:
     - assets/images/
     - assets/data/
+    - .env
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
