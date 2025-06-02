@@ -2,7 +2,6 @@ class FirstAidGuide {
   final String id;
   final String title;
   final String category;
-  final String? imageAsset;
   final bool isEmergency;
   final List<String> tags;
   final List<FirstAidStep> steps;
@@ -11,7 +10,6 @@ class FirstAidGuide {
     required this.id,
     required this.title,
     required this.category,
-    this.imageAsset = '',
     this.tags = const [],
     this.isEmergency = false,
     required this.steps,
@@ -29,7 +27,6 @@ class FirstAidGuide {
       title: json['title'] as String,
       category: json['category'] as String,
       steps: stepsList,
-      imageAsset: json['imageAsset'] as String?,
       tags: List<String>.from(json['tags'] as List<dynamic>? ?? []),
       isEmergency: json['isEmergency'] as bool? ?? false,
     );
@@ -42,7 +39,6 @@ class FirstAidGuide {
       'title': title,
       'category': category,
       'steps': steps.map((step) => step.toJson()).toList(),
-      'imageAsset': imageAsset,
       'tags': tags,
       'isEmergency': isEmergency,
     };
@@ -52,13 +48,11 @@ class FirstAidGuide {
 class FirstAidStep {
   final int order;
   final String desc;
-  final String? imageAsset;
   final bool isWarning;
 
   FirstAidStep({
     required this.order,
     required this.desc,
-    this.imageAsset,
     this.isWarning = false,
   });
 
@@ -67,18 +61,12 @@ class FirstAidStep {
     return FirstAidStep(
       order: json['order'] as int,
       desc: json['desc'] as String,
-      imageAsset: json['imageAsset'] as String?,
       isWarning: json['isWarning'] as bool? ?? false,
     );
   }
 
   // Convert to JSON
   Map<String, dynamic> toJson() {
-    return {
-      'order': order,
-      'desc': desc,
-      'imageAsset': imageAsset,
-      'isWarning': isWarning,
-    };
+    return {'order': order, 'desc': desc, 'isWarning': isWarning};
   }
 }
