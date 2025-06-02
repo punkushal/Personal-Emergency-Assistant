@@ -60,7 +60,7 @@ class FirstAidStep {
   factory FirstAidStep.fromJson(Map<String, dynamic> json) {
     return FirstAidStep(
       order: json['order'] as int,
-      desc: json['desc'] as String,
+      desc: json['description'] as String,
       isWarning: json['isWarning'] as bool? ?? false,
     );
   }
