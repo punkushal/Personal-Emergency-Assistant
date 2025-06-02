@@ -1,0 +1,519 @@
+[
+  {
+    "id": "cpr_adult",
+    "title": "CPR for Adults",
+    "category": "Emergency Response",
+    "isEmergency": true,
+    "tags": ["CPR", "Heart Attack", "Cardiac Arrest", "Life-Saving"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Call 911 immediately or have someone else do it. Ask for an AED if available.",
+        "isWarning": true
+      },
+      {
+        "order": 2,
+        "description": "Place the person on their back on a firm surface. Tilt their head back slightly and open their airway."
+      },
+      {
+        "order": 3,
+        "description": "Place the heel of one hand on the center of their chest, between the nipples. Place your other hand on top, interlocking your fingers."
+      },
+      {
+        "order": 4,
+        "description": "Position yourself directly over their chest. Keep your arms straight and push hard and fast at least 2 inches deep."
+      },
+      {
+        "order": 5,
+        "description": "Push at a rate of 100-120 compressions per minute. Allow complete chest recoil between compressions."
+      },
+      {
+        "order": 6,
+        "description": "After 30 compressions, give 2 rescue breaths. Tilt their head back, lift their chin, and breathe into their mouth."
+      },
+      {
+        "order": 7,
+        "description": "Continue cycles of 30 compressions and 2 breaths until emergency help arrives or the person starts breathing."
+      }
+    ]
+  },
+  {
+    "id": "choking_adult",
+    "title": "Choking - Adult",
+    "category": "Emergency Response",
+    "isEmergency": true,
+    "tags": ["Choking", "Heimlich Maneuver", "Airway Obstruction"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Ask 'Are you choking?' If they can't speak, cough, or breathe, begin first aid immediately.",
+        "isWarning": true
+      },
+      {
+        "order": 2,
+        "description": "Stand behind the person and wrap your arms around their waist."
+      },
+      {
+        "order": 3,
+        "description": "Make a fist with one hand and place it just above their navel, below the ribcage."
+      },
+      {
+        "order": 4,
+        "description": "Grasp your fist with your other hand and give quick, upward thrusts into their abdomen."
+      },
+      {
+        "order": 5,
+        "description": "Continue until the object is expelled or the person becomes unconscious."
+      },
+      {
+        "order": 6,
+        "description": "If the person becomes unconscious, call 911 and begin CPR.",
+        "isWarning": true
+      }
+    ]
+  },
+  {
+    "id": "burns_minor",
+    "title": "Minor Burns Treatment",
+    "category": "Wound Care",
+    "isEmergency": false,
+    "tags": ["Burns", "First Degree", "Skin Care", "Pain Relief"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Remove the person from the heat source immediately and ensure their safety."
+      },
+      {
+        "order": 2,
+        "description": "Cool the burn with cool (not cold) running water for 10-20 minutes."
+      },
+      {
+        "order": 3,
+        "description": "Remove any jewelry or tight clothing from the burned area before swelling begins."
+      },
+      {
+        "order": 4,
+        "description": "Do not use ice, butter, or other home remedies on the burn.",
+        "isWarning": true
+      },
+      {
+        "order": 5,
+        "description": "Cover the burn with a sterile, non-stick bandage or clean cloth."
+      },
+      {
+        "order": 6,
+        "description": "Take over-the-counter pain relievers if needed and seek medical attention if the burn is larger than 3 inches."
+      }
+    ]
+  },
+  {
+    "id": "cuts_bleeding",
+    "title": "Cuts and Bleeding",
+    "category": "Wound Care",
+    "isEmergency": false,
+    "tags": ["Cuts", "Bleeding", "Wound Care", "Bandaging"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Wash your hands thoroughly or use hand sanitizer before treating the wound."
+      },
+      {
+        "order": 2,
+        "description": "Apply direct pressure to the wound with a clean cloth or sterile bandage."
+      },
+      {
+        "order": 3,
+        "description": "Elevate the injured area above the heart if possible to reduce bleeding."
+      },
+      {
+        "order": 4,
+        "description": "If blood soaks through the bandage, add more layers without removing the original."
+      },
+      {
+        "order": 5,
+        "description": "Once bleeding stops, clean the wound gently with water and apply antibiotic ointment."
+      },
+      {
+        "order": 6,
+        "description": "Cover with a sterile bandage and change daily. Seek medical attention if deep or won't stop bleeding.",
+        "isWarning": true
+      }
+    ]
+  },
+  {
+    "id": "sprains_strains",
+    "title": "Sprains and Strains",
+    "category": "Injury Care",
+    "isEmergency": false,
+    "tags": ["Sprains", "Strains", "RICE", "Muscle Injury", "Joint Injury"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Rest the injured area and avoid activities that cause pain."
+      },
+      {
+        "order": 2,
+        "description": "Ice the area for 15-20 minutes every 2-3 hours for the first 48 hours."
+      },
+      {
+        "order": 3,
+        "description": "Compress the area with an elastic bandage, but not too tightly to restrict blood flow."
+      },
+      {
+        "order": 4,
+        "description": "Elevate the injured area above heart level when possible to reduce swelling."
+      },
+      {
+        "order": 5,
+        "description": "Take over-the-counter pain relievers as directed on the package."
+      },
+      {
+        "order": 6,
+        "description": "Seek medical attention if you can't bear weight, have severe pain, or suspect a fracture.",
+        "isWarning": true
+      }
+    ]
+  },
+  {
+    "id": "seizure_response",
+    "title": "Seizure Response",
+    "category": "Medical Emergency",
+    "isEmergency": true,
+    "tags": ["Seizure", "Epilepsy", "Convulsions", "Medical Emergency"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Stay calm and time the seizure. Call 911 if it lasts longer than 5 minutes.",
+        "isWarning": true
+      },
+      {
+        "order": 2,
+        "description": "Clear the area around the person of any hard or sharp objects."
+      },
+      {
+        "order": 3,
+        "description": "Do not hold the person down or put anything in their mouth.",
+        "isWarning": true
+      },
+      {
+        "order": 4,
+        "description": "Turn the person onto one side to prevent choking if they vomit."
+      },
+      {
+        "order": 5,
+        "description": "Place something soft under their head if possible."
+      },
+      {
+        "order": 6,
+        "description": "Stay with the person until they are fully alert. Call 911 if this is their first seizure or if they are injured."
+      }
+    ]
+  },
+  {
+    "id": "heart_attack",
+    "title": "Heart Attack Response",
+    "category": "Medical Emergency",
+    "isEmergency": true,
+    "tags": ["Heart Attack", "Chest Pain", "Cardiac Emergency", "Life-Threatening"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Call 911 immediately. Do not drive the person to the hospital yourself.",
+        "isWarning": true
+      },
+      {
+        "order": 2,
+        "description": "Help the person sit down and rest, preferably in a comfortable position."
+      },
+      {
+        "order": 3,
+        "description": "Loosen any tight clothing around the neck, chest, and waist."
+      },
+      {
+        "order": 4,
+        "description": "If the person takes heart medication (like nitroglycerin), help them take it as prescribed."
+      },
+      {
+        "order": 5,
+        "description": "Give them aspirin to chew if they are not allergic and it's available."
+      },
+      {
+        "order": 6,
+        "description": "Monitor their breathing and pulse. Be prepared to perform CPR if they become unconscious."
+      }
+    ]
+  },
+  {
+    "id": "allergic_reaction",
+    "title": "Allergic Reaction",
+    "category": "Medical Emergency",
+    "isEmergency": true,
+    "tags": ["Allergic Reaction", "Anaphylaxis", "EpiPen", "Breathing Difficulty"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Call 911 immediately if the person has difficulty breathing, swelling of face/throat, or severe symptoms.",
+        "isWarning": true
+      },
+      {
+        "order": 2,
+        "description": "Help the person avoid the allergen if it's known and still present."
+      },
+      {
+        "order": 3,
+        "description": "If the person has an epinephrine auto-injector (EpiPen), help them use it immediately."
+      },
+      {
+        "order": 4,
+        "description": "Have the person lie down with legs elevated, unless they have trouble breathing."
+      },
+      {
+        "order": 5,
+        "description": "Loosen tight clothing and cover with a blanket."
+      },
+      {
+        "order": 6,
+        "description": "Monitor their breathing and be prepared to perform CPR if needed. Do not give anything by mouth."
+      }
+    ]
+  },
+  {
+    "id": "nosebleed",
+    "title": "Nosebleed Treatment",
+    "category": "Basic Care",
+    "isEmergency": false,
+    "tags": ["Nosebleed", "Bleeding", "Nasal Care"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Have the person sit upright and lean slightly forward to prevent blood from running down the throat."
+      },
+      {
+        "order": 2,
+        "description": "Pinch the soft part of the nose firmly with thumb and index finger."
+      },
+      {
+        "order": 3,
+        "description": "Hold for 10-15 minutes without checking if bleeding has stopped."
+      },
+      {
+        "order": 4,
+        "description": "Apply ice to the bridge of the nose to help constrict blood vessels."
+      },
+      {
+        "order": 5,
+        "description": "If bleeding continues after 15 minutes of direct pressure, seek medical attention."
+      },
+      {
+        "order": 6,
+        "description": "Avoid blowing the nose for several hours after bleeding stops."
+      }
+    ]
+  },
+  {
+    "id": "fainting",
+    "title": "Fainting Response",
+    "category": "Basic Care",
+    "isEmergency": false,
+    "tags": ["Fainting", "Unconsciousness", "Low Blood Pressure"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "If the person feels faint, help them lie down with legs elevated above heart level."
+      },
+      {
+        "order": 2,
+        "description": "Loosen any tight clothing, especially around the neck and waist."
+      },
+      {
+        "order": 3,
+        "description": "Check for breathing and pulse. If absent, call 911 and begin CPR."
+      },
+      {
+        "order": 4,
+        "description": "If breathing normally, keep them lying down for several minutes before helping them sit up slowly."
+      },
+      {
+        "order": 5,
+        "description": "Offer water once they are fully alert and can sit up without dizziness."
+      },
+      {
+        "order": 6,
+        "description": "Seek medical attention if fainting was preceded by chest pain, shortness of breath, or if it's their first episode."
+      }
+    ]
+  },
+  {
+    "id": "heat_exhaustion",
+    "title": "Heat Exhaustion",
+    "category": "Environmental",
+    "isEmergency": false,
+    "tags": ["Heat Exhaustion", "Dehydration", "Heat Illness", "Summer Safety"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Move the person to a cool, shaded area or air-conditioned space immediately."
+      },
+      {
+        "order": 2,
+        "description": "Remove excess clothing and loosen tight clothing."
+      },
+      {
+        "order": 3,
+        "description": "Apply cool, wet cloths to the skin or have them take a cool shower if able."
+      },
+      {
+        "order": 4,
+        "description": "Give small sips of cool water if the person is conscious and able to swallow."
+      },
+      {
+        "order": 5,
+        "description": "Fan the person to help with cooling through evaporation."
+      },
+      {
+        "order": 6,
+        "description": "Call 911 if symptoms worsen, temperature rises above 104°F, or if vomiting occurs.",
+        "isWarning": true
+      }
+    ]
+  },
+  {
+    "id": "hypothermia",
+    "title": "Hypothermia Treatment",
+    "category": "Environmental",
+    "isEmergency": true,
+    "tags": ["Hypothermia", "Cold Exposure", "Body Temperature", "Winter Safety"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Call 911 immediately for severe hypothermia. Move the person to a warm, dry area.",
+        "isWarning": true
+      },
+      {
+        "order": 2,
+        "description": "Remove wet clothing gently and replace with dry, loose layers."
+      },
+      {
+        "order": 3,
+        "description": "Cover the person with blankets, leaving only the face exposed."
+      },
+      {
+        "order": 4,
+        "description": "Apply warm, dry compresses to neck, chest, and groin areas only."
+      },
+      {
+        "order": 5,
+        "description": "Give warm, non-alcoholic, non-caffeinated drinks if the person is conscious."
+      },
+      {
+        "order": 6,
+        "description": "Do not rub or massage the person, as this can cause dangerous heart rhythm changes.",
+        "isWarning": true
+      }
+    ]
+  },
+  {
+    "id": "eye_injury",
+    "title": "Eye Injury Care",
+    "category": "Injury Care",
+    "isEmergency": false,
+    "tags": ["Eye Injury", "Foreign Object", "Eye Care", "Vision"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Do not rub the eye or try to remove objects embedded in the eye.",
+        "isWarning": true
+      },
+      {
+        "order": 2,
+        "description": "For small particles, try to flush the eye with clean water or saline solution."
+      },
+      {
+        "order": 3,
+        "description": "Pull the upper eyelid over the lower eyelid to help tears wash out particles."
+      },
+      {
+        "order": 4,
+        "description": "If unsuccessful, cover both eyes with sterile gauze to prevent eye movement."
+      },
+      {
+        "order": 5,
+        "description": "For chemical exposure, flush continuously with water for at least 15 minutes."
+      },
+      {
+        "order": 6,
+        "description": "Seek immediate medical attention for embedded objects, chemicals, or persistent pain.",
+        "isWarning": true
+      }
+    ]
+  },
+  {
+    "id": "poisoning",
+    "title": "Poisoning Response",
+    "category": "Medical Emergency",
+    "isEmergency": true,
+    "tags": ["Poisoning", "Toxic Substances", "Poison Control", "Ingestion"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Call Poison Control immediately at 1-800-222-1222 or 911 for severe symptoms.",
+        "isWarning": true
+      },
+      {
+        "order": 2,
+        "description": "Try to identify what was ingested, how much, and when it occurred."
+      },
+      {
+        "order": 3,
+        "description": "Do not induce vomiting unless specifically instructed by Poison Control.",
+        "isWarning": true
+      },
+      {
+        "order": 4,
+        "description": "If the person is unconscious, position them on their side to prevent choking."
+      },
+      {
+        "order": 5,
+        "description": "Save the container or substance for identification by medical professionals."
+      },
+      {
+        "order": 6,
+        "description": "Follow all instructions from Poison Control or emergency services exactly."
+      }
+    ]
+  },
+  {
+    "id": "fracture_care",
+    "title": "Suspected Fracture Care",
+    "category": "Injury Care",
+    "isEmergency": true,
+    "tags": ["Fracture", "Broken Bone", "Immobilization", "Splinting"],
+    "steps": [
+      {
+        "order": 1,
+        "description": "Do not move the person unless they are in immediate danger. Call 911.",
+        "isWarning": true
+      },
+      {
+        "order": 2,
+        "description": "Keep the injured area still and supported in the position found."
+      },
+      {
+        "order": 3,
+        "description": "Apply ice wrapped in a cloth to reduce swelling, but not directly on skin."
+      },
+      {
+        "order": 4,
+        "description": "If bone is visible through the skin, cover with sterile gauze but do not push it back in."
+      },
+      {
+        "order": 5,
+        "description": "Create a splint using available materials to immobilize the area above and below the injury."
+      },
+      {
+        "order": 6,
+        "description": "Monitor for signs of shock: pale skin, rapid pulse, dizziness, or nausea."
+      }
+    ]
+  }
+]
