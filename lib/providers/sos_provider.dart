@@ -69,7 +69,7 @@ class SosNotifier extends StateNotifier<SosState> {
       //Send SOS message
       final result = await _smsService.sendSosMsg(
         contacts: _contacts,
-        messageTemplate: smsTemplate,
+        messageTemplate: await smsTemplate,
         userProfile: _userProfile,
         locationString: locationString,
       );
