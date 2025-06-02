@@ -5,7 +5,7 @@ import 'package:uuid/uuid.dart';
 
 //Provider for the Storage service
 final storageServiceProvider = Provider<StorageService>((ref) {
-  return StorageService();
+  return StorageService.instance;
 });
 
 //StateNotifier for userprofile
@@ -19,7 +19,7 @@ class UserProfileNotifier extends StateNotifier<UserProfile?> {
   //Load the user profile from storage
   Future<void> _loadUserProfile() async {
     final profile = _storageService.getUserProfile();
-    state = profile;
+    state = await profile;
   }
 
   //Save a new user profile

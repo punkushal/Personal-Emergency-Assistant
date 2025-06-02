@@ -1,20 +1,19 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:personal_emergency_assistant/models/emergency_contact.dart';
-import 'package:personal_emergency_assistant/providers/user_provider.dart';
 import 'package:personal_emergency_assistant/services/storage_service.dart';
 import 'package:uuid/uuid.dart';
 
 //StateNotifier for emergency contacts
 class EmergencyContactsNotifier extends StateNotifier<List<EmergencyContact>> {
-  final StorageService _storageService;
-  EmergencyContactsNotifier(this._storageService) : super([]) {
+  final StorageService _storageService = StorageService.instance;
+  EmergencyContactsNotifier() : super([]) {
     //Load contacts when initialized
     _loadContacts();
   }
 
   // Load contacts from storage
   Future<void> _loadContacts() async {
-    final contacts = _storageService.getEmergencyContacts();
+    final contacts = await _storageService.getEmergencyContacts();
     state = contacts;
   }
 
@@ -138,6 +137,5 @@ final emergencyContactsProvider =
     StateNotifierProvider<EmergencyContactsNotifier, List<EmergencyContact>>((
       ref,
     ) {
-      final storageService = ref.watch(storageServiceProvider);
-      return EmergencyContactsNotifier(storageService);
+      return EmergencyContactsNotifier();
     });
