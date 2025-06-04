@@ -13,7 +13,6 @@ class GuideDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(guide.title),
-        backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Theme.of(context).colorScheme.onSurface,
       ),
