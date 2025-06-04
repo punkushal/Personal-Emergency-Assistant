@@ -5,6 +5,7 @@ import 'package:personal_emergency_assistant/constants/app_themes.dart';
 import 'package:personal_emergency_assistant/providers/contacts_provider.dart';
 import 'package:personal_emergency_assistant/providers/user_provider.dart';
 import 'package:personal_emergency_assistant/screens/first_aid/first_aid_guide_screen.dart';
+import 'package:personal_emergency_assistant/screens/home/sos_button.dart';
 import 'package:personal_emergency_assistant/screens/settings/settings_screen.dart';
 
 class HomeTab extends ConsumerStatefulWidget {
@@ -15,16 +16,18 @@ class HomeTab extends ConsumerStatefulWidget {
 }
 
 class _HomeTabState extends ConsumerState<HomeTab> {
+  String capitalize(String word) {
+    String capitalized = word[0].toUpperCase() + word.substring(1);
+    return capitalized;
+  }
+
   @override
   Widget build(BuildContext context) {
     final userProfile = ref.watch(userProfileProvider);
     final contacts = ref.watch(emergencyContactsProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Welcome ${userProfile?.name != null ? {userProfile!.name.split('')[0]} : ''}',
-        ),
-        backgroundColor: Colors.transparent,
+        title: Text('Welcome ${capitalize(userProfile!.name)}'),
         elevation: 0,
         foregroundColor: Theme.of(context).colorScheme.onSurface,
       ),
@@ -35,7 +38,7 @@ class _HomeTabState extends ConsumerState<HomeTab> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //Quick status check
-              if (userProfile == null || contacts.isEmpty)
+              if (contacts.isEmpty)
                 Container(
                   padding: EdgeInsets.all(16),
                   margin: EdgeInsets.only(bottom: 16),
@@ -60,9 +63,7 @@ class _HomeTabState extends ConsumerState<HomeTab> {
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              userProfile == null
-                                  ? 'Complete your profile setup'
-                                  : 'Add emergency contacts',
+                              'Add emergency contacts',
                               style: AppThemes.bodyStyle.copyWith(
                                 color: Colors.orange[700],
                                 fontSize: 14,
@@ -87,11 +88,11 @@ class _HomeTabState extends ConsumerState<HomeTab> {
                 ),
 
               //SOS Button - Main feature
-              //SosButton(),
+              SosButton(),
               SizedBox(height: 24),
 
               //Emergency info card
-              if (userProfile != null) ...[
+              ...[
                 Text(
                   AppStrings.emergencyInfoTitle,
                   style: AppThemes.subheadingStyle,
@@ -130,7 +131,7 @@ class _HomeTabState extends ConsumerState<HomeTab> {
                   _buildQuickActionCard(
                     context,
                     'Contacts',
-                    'Manage emergency contacts',
+                    'Emergency contacts',
                     Icons.contacts,
                     Colors.blue,
                     () => Navigator.push(
@@ -210,7 +211,7 @@ class _HomeTabState extends ConsumerState<HomeTab> {
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
