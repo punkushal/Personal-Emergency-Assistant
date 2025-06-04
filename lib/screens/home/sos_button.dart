@@ -222,14 +222,6 @@ class _SosButtonState extends ConsumerState<SosButton>
                                       size: 48,
                                     ),
                                     const SizedBox(height: 8),
-                                    Text(
-                                      AppStrings.sosBtnLabel,
-                                      style: AppThemes.headingStyle.copyWith(
-                                        color: Colors.white,
-                                        fontSize: 24,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 4),
                                     const Text(
                                       'Emergency Alert',
                                       style: TextStyle(
