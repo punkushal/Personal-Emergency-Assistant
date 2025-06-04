@@ -37,7 +37,6 @@ class _FirstAidGuideScreenState extends ConsumerState<FirstAidGuideScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(AppStrings.firstAidGuidesTitle),
-        backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Theme.of(context).colorScheme.onSurface,
       ),
@@ -73,6 +72,12 @@ class _FirstAidGuideScreenState extends ConsumerState<FirstAidGuideScreen> {
                             padding: const EdgeInsets.only(right: 8.0),
                             child: FilterChip(
                               label: const Text('All'),
+                              labelStyle: TextStyle(
+                                color:
+                                    _selectedCategory == null
+                                        ? Colors.white
+                                        : null,
+                              ),
                               selected: _selectedCategory == null,
                               onSelected: (selected) {
                                 setState(() {
@@ -89,6 +94,12 @@ class _FirstAidGuideScreenState extends ConsumerState<FirstAidGuideScreen> {
                           padding: const EdgeInsets.only(right: 8.0),
                           child: FilterChip(
                             label: Text(category),
+                            labelStyle: TextStyle(
+                              color:
+                                  _selectedCategory == category
+                                      ? Colors.white
+                                      : null,
+                            ),
                             selected: _selectedCategory == category,
                             onSelected: (selected) {
                               setState(() {
