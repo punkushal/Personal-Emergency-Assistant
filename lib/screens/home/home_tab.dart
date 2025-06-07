@@ -5,6 +5,7 @@ import 'package:personal_emergency_assistant/constants/app_themes.dart';
 import 'package:personal_emergency_assistant/providers/contacts_provider.dart';
 import 'package:personal_emergency_assistant/providers/user_provider.dart';
 import 'package:personal_emergency_assistant/screens/first_aid/first_aid_guide_screen.dart';
+import 'package:personal_emergency_assistant/screens/home/emergency_info_card.dart';
 import 'package:personal_emergency_assistant/screens/home/sos_button.dart';
 import 'package:personal_emergency_assistant/screens/settings/settings_screen.dart';
 
@@ -98,7 +99,7 @@ class _HomeTabState extends ConsumerState<HomeTab> {
                   style: AppThemes.subheadingStyle,
                 ),
                 SizedBox(height: 12),
-                //EmergencyInfoCard(userProfile: userProfile)
+                EmergencyInfoCard(userProfile: userProfile),
                 SizedBox(height: 24),
               ],
 
