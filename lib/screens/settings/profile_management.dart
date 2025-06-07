@@ -64,7 +64,6 @@ class _ProfileManagementState extends ConsumerState<ProfileManagement> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Personal Information'),
-        backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Theme.of(context).colorScheme.onSurface,
       ),
