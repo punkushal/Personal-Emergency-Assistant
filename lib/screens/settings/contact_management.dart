@@ -35,7 +35,6 @@ class _ContactManagementState extends ConsumerState<ContactManagement> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Emergency Contacts'),
-        backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Theme.of(context).colorScheme.onSurface,
       ),
