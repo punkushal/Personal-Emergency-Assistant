@@ -8,7 +8,7 @@
     "steps": [
       {
         "order": 1,
-        "description": "Call 911 immediately or have someone else do it. Ask for an AED if available.",
+        "description": "Call 102(Nepal's Context) immediately or have someone else do it. Ask for an AED if available.",
         "isWarning": true
       },
       {
@@ -218,7 +218,7 @@
     "steps": [
       {
         "order": 1,
-        "description": "Call 911 immediately. Do not drive the person to the hospital yourself.",
+        "description": "Call 102(Nepal's Context) immediately. Do not drive the person to the hospital yourself.",
         "isWarning": true
       },
       {
@@ -252,7 +252,7 @@
     "steps": [
       {
         "order": 1,
-        "description": "Call 911 immediately if the person has difficulty breathing, swelling of face/throat, or severe symptoms.",
+        "description": "Call 102(Nepal's Context) immediately if the person has difficulty breathing, swelling of face/throat, or severe symptoms.",
         "isWarning": true
       },
       {
@@ -386,7 +386,7 @@
     "steps": [
       {
         "order": 1,
-        "description": "Call 911 immediately for severe hypothermia. Move the person to a warm, dry area.",
+        "description": "Call 102(Nepal's Context) immediately for severe hypothermia. Move the person to a warm, dry area.",
         "isWarning": true
       },
       {
