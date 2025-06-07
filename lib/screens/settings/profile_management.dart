@@ -41,11 +41,13 @@ class _ProfileManagementState extends ConsumerState<ProfileManagement> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final userProfile = ref.read(userProfileProvider);
       if (userProfile != null) {
-        _nameController.text = userProfile.name;
-        _selectedBloodGroup = userProfile.bloodGroup;
-        _allergiesController.text = userProfile.allergies;
-        _medicalConditionsController.text = userProfile.medicalConditions;
-        _medicationsController.text = userProfile.medications;
+        setState(() {
+          _nameController.text = userProfile.name;
+          _selectedBloodGroup = userProfile.bloodGroup;
+          _allergiesController.text = userProfile.allergies;
+          _medicalConditionsController.text = userProfile.medicalConditions;
+          _medicationsController.text = userProfile.medications;
+        });
       }
     });
   }
