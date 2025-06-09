@@ -5,7 +5,7 @@ class AppConstants {
 
   //Default SOS message template
   static const String defaultSosTemplate =
-      'Emergency: I need help! My location is: {LOCATION}, Medical info: Blood type: {BLOOD_TYPE}, Allergies: ALLERGIES}';
+      'Emergency: I need help! My location is: {LOCATION}, Medical info: Blood type: {BLOOD_TYPE}, Allergies: {ALLERGIES}';
 
   //Permission messages
   static const String locationPermissionRationale =
