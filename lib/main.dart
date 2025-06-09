@@ -17,7 +17,9 @@ Future<void> main() async {
   final storageService = StorageService.instance;
   final hasCompletedOnboarding = storageService.getHasCompletedOnboarding();
   runApp(
-    ProviderScope(child: MyApp(hasCompletedOnboarding: hasCompletedOnboarding)),
+    ProviderScope(
+      child: MyApp(hasCompletedOnboarding: await hasCompletedOnboarding),
+    ),
   );
 }
 
