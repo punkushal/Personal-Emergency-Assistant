@@ -99,7 +99,8 @@ class StorageService {
     );
   }
 
-  bool getHasCompletedOnboarding() {
+  Future<bool> getHasCompletedOnboarding() async {
+    await _ensureInitialized();
     return _prefs.getBool(AppConstants.prefsHasCompletedOnboardingKey) ?? false;
   }
 
