@@ -304,120 +304,124 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     return Padding(
       padding: const EdgeInsets.all(24.0),
       child: Form(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 32),
+        key: _formKey,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 32),
 
-            Text('Personal Information', style: AppThemes.headingStyle),
+              Text('Personal Information', style: AppThemes.headingStyle),
 
-            const SizedBox(height: 8),
+              const SizedBox(height: 8),
 
-            Text(
-              'This information will be included in emergency alerts to help first responders.',
-              style: AppThemes.bodyStyle.copyWith(color: Colors.grey[600]),
-            ),
-
-            const SizedBox(height: 32),
-
-            // Name field
-            TextFormField(
-              controller: _nameController,
-              decoration: const InputDecoration(
-                labelText: AppStrings.fullNameLabel,
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.person),
+              Text(
+                'This information will be included in emergency alerts to help first responders.',
+                style: AppThemes.bodyStyle.copyWith(color: Colors.grey[600]),
               ),
-              textCapitalization: TextCapitalization.words,
-              validator: (value) {
-                if (value == null || value.trim().isEmpty) {
-                  return 'Full name is required';
-                }
-                if (value.trim().length < 6) {
-                  return 'Name must be at least 6 characters long';
-                }
-                return null;
-              },
-              autovalidateMode:
-                  _hasAttemptedValidation
-                      ? AutovalidateMode.onUserInteraction
-                      : AutovalidateMode.disabled,
-            ),
 
-            const SizedBox(height: 16),
+              const SizedBox(height: 32),
 
-            // Blood group dropdown
-            DropdownButtonFormField<String>(
-              value: _selectedBloodGroup,
-              decoration: const InputDecoration(
-                labelText: AppStrings.bloodGroupLabel,
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.bloodtype),
+              // Name field
+              TextFormField(
+                controller: _nameController,
+                decoration: const InputDecoration(
+                  labelText: AppStrings.fullNameLabel,
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.person),
+                ),
+                textCapitalization: TextCapitalization.words,
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return 'Full name is required';
+                  }
+                  if (value.trim().length < 6) {
+                    return 'Name must be at least 6 characters long';
+                  }
+                  return null;
+                },
+                autovalidateMode:
+                    _hasAttemptedValidation
+                        ? AutovalidateMode.onUserInteraction
+                        : AutovalidateMode.disabled,
               ),
-              items:
-                  _bloodGroups.map((bloodGroup) {
-                    return DropdownMenuItem(
-                      value: bloodGroup,
-                      child: Text(bloodGroup),
-                    );
-                  }).toList(),
-              onChanged: (value) {
-                setState(() {
-                  _selectedBloodGroup = value!;
-                });
-              },
-              validator: (value) {
-                if (value == null || value.trim().isEmpty) {
-                  return 'Please select your blood group';
-                }
-                return null;
-              },
-              autovalidateMode:
-                  _hasAttemptedValidation
-                      ? AutovalidateMode.onUserInteraction
-                      : AutovalidateMode.disabled,
-            ),
 
-            const SizedBox(height: 16),
+              const SizedBox(height: 16),
 
-            // Allergies field
-            TextFormField(
-              controller: _allergiesController,
-              decoration: const InputDecoration(
-                labelText: AppStrings.allergiesLabel,
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.warning),
-                hintText: 'e.g., Penicillin, Nuts, etc.',
+              // Blood group dropdown
+              DropdownButtonFormField<String>(
+                value: _selectedBloodGroup,
+                decoration: const InputDecoration(
+                  labelText: AppStrings.bloodGroupLabel,
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.bloodtype),
+                ),
+                items:
+                    _bloodGroups.map((bloodGroup) {
+                      return DropdownMenuItem(
+                        value: bloodGroup,
+                        child: Text(bloodGroup),
+                      );
+                    }).toList(),
+                onChanged: (value) {
+                  setState(() {
+                    _selectedBloodGroup = value!;
+                  });
+                },
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return 'Please select your blood group';
+                  }
+                  return null;
+                },
+                autovalidateMode:
+                    _hasAttemptedValidation
+                        ? AutovalidateMode.onUserInteraction
+                        : AutovalidateMode.disabled,
               ),
-              maxLines: 2,
-            ),
 
-            const Spacer(),
+              const SizedBox(height: 16),
 
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.blue[50],
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.blue[200]!),
+              // Allergies field
+              TextFormField(
+                controller: _allergiesController,
+                decoration: const InputDecoration(
+                  labelText: AppStrings.allergiesLabel,
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.warning),
+                  hintText: 'e.g., Penicillin, Nuts, etc.',
+                ),
+                maxLines: 2,
               ),
-              child: Row(
-                children: [
-                  Icon(Icons.info, color: Colors.blue[700]),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Text(
-                      'This information is stored locally on your device and will only be shared during emergency situations.',
-                      style: AppThemes.bodyStyle.copyWith(
-                        fontSize: 14,
-                        color: Colors.blue[700],
+
+              const SizedBox(height: 32),
+
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.blue[50],
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Colors.blue[200]!),
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.info, color: Colors.blue[700]),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        'This information is stored locally on your device and will only be shared during emergency situations.',
+                        style: AppThemes.bodyStyle.copyWith(
+                          fontSize: 14,
+                          color: Colors.blue[700],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: 16),
+            ],
+          ),
         ),
       ),
     );
